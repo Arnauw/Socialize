@@ -1,0 +1,44 @@
+{% set route = app.request.attributes.get('_route') %}
+<section class="menu">
+<ul>
+    <li><a href="{{ path('homepage')}}">Homepage</a></li>
+
+    {% if app.user %}
+
+        <li>Notifications</li>
+        <li>Messages</li>
+        <li>Hot</li>
+        <li>Profile</li>
+        <li>Parameters</li>
+{#        {% if app.user %}#}
+{#            <div class="mb-3">#}
+{#                 <a href="{{ path('logout') }}">Logout</a>#}
+{#            </div>#}
+{#        {% endif %}#}
+        <li>You are logged in as {{ app.user.username }},<a href="{{ path('logout')}}">Logout</a></li>
+
+    {% else %}
+
+        {% if route == 'login' %}
+
+            <li><a href="{{ path('register')}}">Register</a></li>
+
+        {% elseif route == 'register' %}
+
+            <li><a href="{{ path('login')}}">Login</a></li>
+
+        {% else %}
+
+            <li><a href="{{ path('login')}}">Login</a></li>
+            <li><a href="{{ path('register')}}">Register</a></li>
+
+        {% endif %}
+
+    {% endif %}
+
+</ul>
+</section>
+
+<!-- <section class="menu-burger">
+
+</section> -->

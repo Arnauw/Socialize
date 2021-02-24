@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+    {{ encore_entry_link_tags('app') }}
+
+{% endblock %}
+
+{% block title %}Hello AppController!{% endblock %}
+
+{% block body %}
+
+    {% include "app/menu.html.twig" %}
+
+    {% for flashError in app.flashes('error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <section class="register-success">
+
+        <h1>Your the link to verify your account has expired ?</h1>
+
+        <h1>No problem enter your email adress to receive a new email to verify your account.</h1>
+
+{#        <form>#}
+{#            <input type="email">#}
+{#            <label for=""></label>#}
+{#        </form>#}
+
+        {{ form_start(form) }}
+        {{ form_row(form.email, {
+            label: 'Email'
+        }) }}
+        <button type="submit" class="btn">Send</button>
+        {{ form_end(form) }}
+        
+    </section>
+
+{% endblock %}

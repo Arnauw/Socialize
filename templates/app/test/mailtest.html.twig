@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+    {{ encore_entry_link_tags('app') }}
+
+{% endblock %}
+
+{% block title %}Mail{% endblock %}
+
+{% block body %}
+
+    {% include "app/menu.html.twig" %}
+
+    <section class="app">
+
+        <h1>Mail Verification Send</h1>
+
+        <div class="welcome">
+            An email has been send to you.
+        </div>
+
+    </section>
+
+{% endblock %}

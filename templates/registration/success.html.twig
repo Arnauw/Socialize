@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+            {{ encore_entry_link_tags('app') }}
+
+        {% endblock %}
+
+{% block title %}Hello AppController!{% endblock %}
+
+{% block body %}
+
+{% include "app/menu.html.twig" %}
+
+<section class="register-success">
+
+    <h1>Account successfully created !</h1>
+
+    <h1>You now need to verify your account by opening the link you received in your mail box.</h1>
+
+</section>
+
+{% endblock %}
